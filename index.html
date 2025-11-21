@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق تيليجرام المصغر</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(90deg, #0088cc, #34b7f1);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .content {
+            padding: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f0f0f0;
+        }
+
+        .card h2 {
+            color: #0088cc;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .feature {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature i {
+            font-size: 2rem;
+            color: #0088cc;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #0088cc;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px 5px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #006da0;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .user-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        @media (max-width: 600px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>تطبيق تيليجرام المصغر</h1>
+            <p>أول تطبيق ويب مصغر مدمج مع تيليجرام</p>
+        </header>
+        
+        <div class="content">
+            <div class="card">
+                <h2>مرحباً بك في التطبيق المصغر</h2>
+                <p>هذا تطبيق ويب بسيط يمكن دمجه مع تيليجرام كـ Mini App. يمكنك استخدامه لعرض المحتوى والتفاعل مع المستخدمين.</p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <i>📱</i>
+                        <h3>متجاوب</h3>
+                        <p>يعمل على جميع الأجهزة</p>
+                    </div>
+                    <div class="feature">
+                        <i>⚡</i>
+                        <h3>سريع</h3>
+                        <p>أداء عالي وسريع</p>
+                    </div>
+                    <div class="feature">
+                        <i>🔒</i>
+                        <h3>آمن</h3>
+                        <p>بياناتك محمية</p>
+                    </div>
+                </div>
+                
+                <button class="btn" id="actionBtn">تفعيل الإجراء</button>
+                <button class="btn" id="shareBtn">مشاركة التطبيق</button>
+            </div>
+            
+            <div class="card">
+                <h2>معلومات المستخدم</h2>
+                <div class="user-info" id="userInfo">
+                    <p>سيتم عرض معلومات المستخدم هنا عند فتح التطبيق من تيليجرام</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>كيفية الربط مع تيليجرام</h2>
+                <p>لربط هذا التطبيق مع تيليجرام كـ Mini App:</p>
+                <ol style="padding-right: 20px; margin-top: 10px;">
+                    <li>أنشئ بوت في تيليجرام باستخدام BotFather</li>
+                    <li>اضف زر ويب في القائمة باستخدام BotFather</li>
+                    <li>ارفع الملفات على Vcel</li>
+                    <li>اضف الرابط في إعدادات البوت</li>
+                </ol>
+            </div>
+        </div>
+        
+        <footer>
+            <p>تم التطوير باستخدام HTML, CSS, JavaScript | جاهز للرفع على Vcel</p>
+        </footer>
+    </div>
+
+    <script>
+        // محاكاة Telegram Web App SDK
+        // في بيئة تيليجرام الحقيقية، سيتم تحميل SDK من تيليجرام
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const actionBtn = document.getElementById('actionBtn');
+            const shareBtn = document.getElementById('shareBtn');
+            const userInfo = document.getElementById('userInfo');
+            
+            // محاكاة تهيئة Telegram Web App
+            setTimeout(() => {
+                userInfo.innerHTML = `
+                    <h3>معلومات المستخدم (محاكاة)</h3>
+                    <p><strong>الاسم:</strong> محمد أحمد</p>
+                    <p><strong>المعرف:</strong> 123456789</p>
+                    <p><strong>اللغة:</strong> العربية</p>
+                    <p><strong>النظام:</strong> Android</p>
+                `;
+            }, 1000);
+            
+            // إضافة تفاعل للأزرار
+            actionBtn.addEventListener('click', function() {
+                alert('تم تنفيذ الإجراء بنجاح!');
+            });
+            
+            shareBtn.addEventListener('click', function() {
+                alert('تمت محاكاة مشاركة التطبيق!');
+            });
+            
+            // في تطبيق حقيقي، سيكون هناك كود للتفاعل مع Telegram Web App SDK
+            // مثل:
+            /*
+            let tg = window.Telegram.WebApp;
+            tg.expand();
+            tg.MainButton.setText('تم التفعيل').show();
+            
+            // الحصول على معلومات المستخدم
+            const user = tg.initDataUnsafe.user;
+            if (user) {
+                userInfo.innerHTML = `
+                    <h3>معلومات المستخدم</h3>
+                    <p><strong>الاسم:</strong> ${user.first_name} ${user.last_name || ''}</p>
+                    <p><strong>المعرف:</strong> ${user.id}</p>
+                    <p><strong>اسم المستخدم:</strong> ${user.username || 'غير متوفر'}</p>
+                    <p><strong>اللغة:</strong> ${tg.initDataUnsafe.user.language_code || 'غير معروف'}</p>
+                `;
+            }
+            */
+        });
+    </script>
+</body>
+</html>
